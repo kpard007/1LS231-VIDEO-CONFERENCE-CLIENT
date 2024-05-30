@@ -1,4 +1,4 @@
-### Configuration File
+### Configuration File (js/config.js)
 ```javascript
 const CONFIG = {
     apiRTC: {
