@@ -1,5 +1,5 @@
-
 document.addEventListener('alpine:init', () => {
+    
     Alpine.data('App', () => ({
         userName: null,
         room: null,
@@ -9,6 +9,7 @@ document.addEventListener('alpine:init', () => {
         streamList: [],
         chats: [],
         message: "",
+        
         toggleMode(){
             if (this.mode == "light") {
                 this.mode = "dark";
@@ -16,6 +17,7 @@ document.addEventListener('alpine:init', () => {
                 this.mode = "light";
             }
         },
+
         async accessRoom() {
             let self = this;
             this.room = this.roomName;
@@ -33,14 +35,20 @@ document.addEventListener('alpine:init', () => {
 
             
             await ApiRTCHelper.connect(
+                
                 this.room,
+                
                 (streamInfo) => {
                     this.streamList.push(streamInfo);
                 },
+                
                 (stream) => {
                     this.streamList = this.streamList.filter(x => x.streamId != stream.streamId);
                 }
-            );            
+                
+            );     
+
+            console.log("access Romm");
         },
         async sendMessage() {
             console.log("publishing: " + this.message + " ...");

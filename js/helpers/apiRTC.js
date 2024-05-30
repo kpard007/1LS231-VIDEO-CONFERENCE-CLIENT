@@ -1,4 +1,5 @@
 class ApiRTCHelper {
+    
     static API_KEY = CONFIG.apiRTC.apiKey;
     static userAgent = undefined;
     static session = undefined;
@@ -12,6 +13,8 @@ class ApiRTCHelper {
         
         try {
             this.userAgent = new apiRTC.UserAgent({ uri: 'apiKey:' + CONFIG.apiRTC.apiKey })
+            //console.log(CONFIG.apiRTC.apiKey)
+            // this.userAgent = new apiRTC.UserAgent({ uri: 'apiKey:' + "rJu6mA.QMjElg:Xu5WUp8Ln2fcNgqyVZsSZvBo-txemWpvfjHdRz048RA" })
 
             this.session = await this.userAgent.register({
                 cloudUrl: CONFIG.apiRTC.cloudUrl
