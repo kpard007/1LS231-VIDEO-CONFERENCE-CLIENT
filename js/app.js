@@ -9,8 +9,9 @@ document.addEventListener('alpine:init', () => {
         streamList: [],
         chats: [],
         message: "",
+        video:true,
+        audio:true,
         CallActions: new CallActions(),
-        
         view: "call",
         files: [],
         notes:[],
@@ -39,11 +40,18 @@ document.addEventListener('alpine:init', () => {
             
             await ApiRTCHelper.connect(
                 this.room,
+
                 (streamInfo) => {
-                    this.streamList.push(streamInfo);
+                    this.streamList.push(
+                        {
+                            user: this.userName,
+                            streamInfo: streamInfo
+                        }
+                    );
                 },
+
                 (stream) => {
-                    this.streamList = this.streamList.filter(x => x.streamId != stream.streamId);
+                    this.streamList = this.streamList.filter(x => x.streamInfo.streamId != stream.streamId);
                 }
             );            
         },
