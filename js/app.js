@@ -39,9 +39,16 @@ document.addEventListener('alpine:init', () => {
             
             await ApiRTCHelper.connect(
                 this.room,
+
                 (streamInfo) => {
-                    this.streamList.push(streamInfo);
+                    this.streamList.push(
+                        {
+                            user: this.userName,
+                            streamInfo: streamInfo
+                        }
+                    );
                 },
+
                 (stream) => {
                     this.streamList = this.streamList.filter(x => x.streamInfo.streamId != stream.streamId);
                 }
