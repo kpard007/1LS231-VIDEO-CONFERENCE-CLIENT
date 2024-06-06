@@ -1,4 +1,3 @@
-
 document.addEventListener('alpine:init', () => {
     Alpine.data('App', () => ({
         userName: null,
@@ -9,6 +8,11 @@ document.addEventListener('alpine:init', () => {
         streamList: [],
         chats: [],
         message: "",
+        CallActions: new CallActions(),
+        
+        view: "call",
+        files: [],
+        notes:[],
         toggleMode(){
             if (this.mode == "light") {
                 this.mode = "dark";
@@ -63,3 +67,13 @@ document.addEventListener('alpine:init', () => {
         }
     }))
 });
+
+window.ondragover = function(event) {
+    event.preventDefault();
+};
+ 
+window.ondrop = function(event) {
+    event.preventDefault();
+    const files = event.dataTransfer.files;
+    console.log(files);
+};
