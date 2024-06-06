@@ -42,7 +42,7 @@ document.addEventListener('alpine:init', () => {
                     this.streamList.push(streamInfo);
                 },
                 (stream) => {
-                    this.streamList = this.streamList.filter(x => x.streamId != stream.streamId);
+                    this.streamList = this.streamList.filter(x => x.streamInfo.streamId != stream.streamId);
                 }
             );            
         },
