@@ -9,8 +9,8 @@ document.addEventListener('alpine:init', () => {
         chats: [],
         message: "",
         video:true,
+        audio:true,
         CallActions: new CallActions(),
-        
         view: "call",
         files: [],
         notes:[],
@@ -64,7 +64,6 @@ document.addEventListener('alpine:init', () => {
             ApiRTCHelper.toggleAudio();
         },
         toggleVideo(){
-            this.video = !this.video;
             ApiRTCHelper.toggleVideo();
         }
     }))
