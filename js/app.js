@@ -8,8 +8,8 @@ document.addEventListener('alpine:init', () => {
         streamList: [],
         chats: [],
         message: "",
+        audio:true,
         CallActions: new CallActions(),
-        
         view: "call",
         files: [],
         notes:[],
