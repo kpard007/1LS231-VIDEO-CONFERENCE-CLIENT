@@ -9,6 +9,7 @@ document.addEventListener('alpine:init', () => {
         streamList: [],
         chats: [],
         message: "",
+        audio:true,
         toggleMode(){
             if (this.mode == "light") {
                 this.mode = "dark";
@@ -56,6 +57,7 @@ document.addEventListener('alpine:init', () => {
             this.message = '';
         },
         toggleAudio(){
+            this.audio = !this.audio;
             ApiRTCHelper.toggleAudio();
         },
         toggleVideo(){
