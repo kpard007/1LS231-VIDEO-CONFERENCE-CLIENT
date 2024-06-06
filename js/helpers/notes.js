@@ -35,7 +35,7 @@ class NotesHelper {
         ];
     }
 
-    static editNote(noteId, note) {
+    static edit(noteId, note) {
         return true;
     }
 
