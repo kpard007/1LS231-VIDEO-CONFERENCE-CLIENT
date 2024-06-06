@@ -1,6 +1,6 @@
 
 class NotesHelper {
-    constructor () {
+     constructor () {
         this.notes = [];
     }
 
@@ -24,4 +24,14 @@ class NotesHelper {
     getList(roomId) {
         return this.notes.filter(note => note.roomCode === roomId)
     }
+
+    editNote(noteId, note) {
+        const index = this.notes.findIndex(note => note.id === noteId);
+        if(index !== -1){
+            this.notes[index] = {id: noteId, note};
+            return true;
+        }
+        return false;
+    }
+
 }
