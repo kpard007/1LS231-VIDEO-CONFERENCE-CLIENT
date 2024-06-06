@@ -1,9 +1,5 @@
 
 class NotesHelper {
- 
-    static notes = [];
-
-
     static add(note) {
         const newId = "12345";
         return newId;
@@ -15,7 +11,28 @@ class NotesHelper {
 
 
     static getList(roomCode) {
-        return Note;
+        return [
+            {
+                "sender": {
+                  "name": "XYZ",
+                  "picture": "images/avatar.jpeg"
+                },
+                "content": {
+                  "message": "XYZ",
+                  "color": "#000"
+                }
+            },
+            {
+                "sender": {
+                  "name": "XYZ",
+                  "picture": "images/avatar.jpeg"
+                },
+                "content": {
+                  "message": "XYZ",
+                  "color": "#000"
+                }
+            }
+        ];
     }
 
     static editNote(noteId, note) {
