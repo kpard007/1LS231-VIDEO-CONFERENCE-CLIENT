@@ -1,4 +1,5 @@
 
+import DatabaseHelper from "./helpers/database";
 document.addEventListener('alpine:init', () => {
     Alpine.data('App', () => ({
         userName: null,
