@@ -1,19 +1,23 @@
 document.addEventListener("alpine:init", () => {
   Alpine.data("App", () => ({
+    mode: "light",
+    view: "call",
+
     userName: null,
     room: null,
     roomName: null,
-    channel: null,
-    mode: "light",
+
+    message: "",
+
     streamList: [],
     chats: [],
-    message: "",
-    video: true,
-    audio: true,
-    CallActions: new CallActions(),
-    view: "call",
     files: [],
     notes: [],
+
+    video: true,
+    audio: true,
+
+    CallActions: new CallActions(),
     toggleMode() {
       if (this.mode == "light") {
         this.mode = "dark";
@@ -75,8 +79,6 @@ document.addEventListener("alpine:init", () => {
   }));
 });
 
-firebase.initializeApp(CONFIG.Firebase);
-
 window.ondragover = function (event) {
   event.preventDefault();
 };
@@ -86,3 +88,5 @@ window.ondrop = function (event) {
   const files = event.dataTransfer.files;
   console.log(files);
 };
+
+firebase.initializeApp(CONFIG.Firebase);
