@@ -60,7 +60,6 @@ document.addEventListener('alpine:init', () => {
             this.message = '';
         },
         toggleAudio(){
-            this.audio = !this.audio;
             ApiRTCHelper.toggleAudio();
         },
         toggleVideo(){
