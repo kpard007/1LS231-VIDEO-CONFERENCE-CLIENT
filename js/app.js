@@ -11,7 +11,7 @@ document.addEventListener('alpine:init', () => {
         message: "",
         view: "call",
         files: [],
-        notes:'',
+        notes:[],
         toggleMode(){
             if (this.mode == "light") {
                 this.mode = "dark";
