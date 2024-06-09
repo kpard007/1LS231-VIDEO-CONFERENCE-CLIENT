@@ -14,6 +14,14 @@ class DatabaseHelper {
                     "picture": "images/avatar.jpeg"
                 }
             },
+            {
+                action: "file",
+                file: "12345/test.txt",
+                sender: {
+                    name: "John Doe",
+                    picture: "images/avatar.jpeg"
+                }   
+            },
             { 
                 "action": "chat",
                 "message": "XYZ",

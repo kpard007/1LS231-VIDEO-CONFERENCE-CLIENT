@@ -6,7 +6,7 @@
 		<script type="text/javascript" src="https://cdn.ably.com/lib/ably.min-1.js"></script>
 		<script type="text/javascript" src="https://cdn.apirtc.com/apiRTC/apiRTC-latest.min.js"></script>	
 		<script type="text/javascript" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-		<script type="text/javascript" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>	
+		<script type="text/javascript" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>	
 	</head>
 	<body x-data="App" x-bind:class="mode">
 		<div class="waiting-room-container" x-show="!room">
@@ -70,14 +70,14 @@
 			<div class="app-main">
 				<div class="video-call-wrapper">
 					<div class="video-participant">
-						<a href="#" class="name-tag">Andy Will</a>
+						<a href="#" class="name-tag" x-text="userName"></a>
 						<div id="publisher-container" class="stream-video-container">
 							<video id="publisher-video" autoplay="true" muted="true" width="320" height="240"></video>
 						</div>
 					</div>
 					<template x-for="stream in streamList">
-						<div class="video-participant" >
-							<a href="#" class="name-tag">Emmy Lou</a>
+						<div class="video-participant">
+							<a href="#" class="name-tag" x-text="stream.user"></a>
 							<div :id="`remote-${stream.streamId}`" class="stream-video-container">
 							</div>
 						</div>
