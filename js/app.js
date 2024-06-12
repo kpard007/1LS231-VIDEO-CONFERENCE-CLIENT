@@ -96,6 +96,17 @@ const App = {
     }
   },
 
+  async deleteNote(noteId) {
+    const deleteRes = NotesHelper.delete(noteId);
+
+    if (deleteRes === true) {
+       await this.sendChat({
+        "action": "delete-note",
+        "id": noteId // id de la nota
+       })
+    }
+  },
+
 };
 
 document.addEventListener("alpine:init", () => {
