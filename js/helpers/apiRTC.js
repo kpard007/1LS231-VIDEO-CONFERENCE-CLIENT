@@ -72,6 +72,25 @@ class ApiRTCHelper {
             console.error('Error durante la conexión:', error);
         }
     }
+        //NUEVO 
+
+        //SALIR DE LA CONVERSACION
+        static leave() {
+            if (this.conversation) {
+                this.conversation.leave()
+                    .then(() => {
+                        console.log('Has salido de la conversacion.');
+                    })
+                    .catch((error) => {
+                        console.error('Error al salir de la conversacion:', error);
+                    });
+            } else {
+                console.error('No hay conversacion de la que puedas salir.');
+            }
+        }
+
+
+
 
     static toggleAudio() {
         if (this.localStream) {
