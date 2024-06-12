@@ -84,6 +84,18 @@ const App = {
   toggleVideo() {
     ApiRTCHelper.toggleVideo();
   },
+
+  async editNote(jsonNote) {
+    const editRes = NotesHelper.edit(jsonNote.id, jsonNote);
+
+    if (editRes === true) {
+       await this.sendChat({
+        "action": "edit-note",
+	      "note": jsonNote
+       })
+    }
+  },
+
 };
 
 document.addEventListener("alpine:init", () => {
